@@ -70,7 +70,7 @@ jobs:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
             type=schedule,pattern=latest
-            type=ref,event=branch
+            type=ref,event=branch,pattern=latest
             type=ref,event=tag,pattern=stable
             type=ref,event=pr
 
