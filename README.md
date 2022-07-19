@@ -6,9 +6,13 @@ This repo automatically updates based on the latest version of the official PHP-
 ## Installing
 
 You can get this image by pulling `ghcr.io/justSem/nextcloud-php-fpm:latest`
+
 This project offers three tagged versions:
+
 `nightly` is the automatically built version based on the latest `php-fpm` image - beware that this image may present incompatibilities with current nextCloud versions as the build is not checked for proper functionality.
+
 `latest` is the latest manually created build.
+
 `stable` is the latest _semver_ tagged build (i.e. `v1.0.1`). This build has been tested to work correctly against the latest stable Nextcloud at the time of the build.
 
 
