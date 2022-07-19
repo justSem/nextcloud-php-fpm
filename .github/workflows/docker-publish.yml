@@ -69,10 +69,14 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
           tags: |
-            type=schedule,value=latest
-            type=ref,event=branch,value=latest
+            type=schedule,pattern=nightly
             type=ref,event=tag,value=stable
             type=ref,event=pr
+            type=raw,value=latest,enable=${{ github.ref == format('refs/heads/{0}', 'main') }}
+          labels: |
+            org.opencontainers.image.title=nextcloud-php-fpm
+            org.opencontainers.image.description=A nextcloud tuned PHP-FPM version for Kubernetes
+            org.opencontainers.image.vendor=justsem.org
 
       # Build and push Docker image with Buildx (don't push on PR)
       # https://github.com/docker/build-push-action
